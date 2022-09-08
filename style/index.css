@@ -1,0 +1,76 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    background-color: rgb(193, 18, 117);
+    color: black;
+    font-family: "Courier new";
+}
+
+    body h1 {
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        padding-top: 2vh;
+    }
+
+    body .credentials {
+        font-size: 3vh;
+        background-color: rgb(237, 62, 214);
+        width: 90%;
+        margin: auto;
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 0vh 0 3vh 0;
+
+    }
+
+        body .credentials label{
+            display: block;
+            font-weight: bolder;
+            margin: auto;
+            width: 90%;
+        }
+    
+        body .credentials input{
+            display: block;
+            margin: auto;
+            width: 90%;
+        }
+
+        body .credentials button {
+            display: block;
+            width: 90%;
+            margin: auto;
+            margin-top: 4vh;
+            background-color: rgb(74, 139, 213);
+            font-weight: bold;
+        }
+        
+    body #options {
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        top: 100%;
+        transform: translateY(-100%);
+        width: 100%;
+    }   
+    
+        body #options a {
+            font-size: x-small;
+            color: black;
+            font-weight: bold;
+            padding: 0 5vh 5vh 5vh;
+        }
+
+        body #options #password-recover {
+            
+        }
+
+        body #options #sign-up {
+        }
+        
