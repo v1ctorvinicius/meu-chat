@@ -1,0 +1,42 @@
+html {
+    height: 100%;
+}
+
+body{
+    height: 100%;
+    background: linear-gradient(rgb(135, 62, 145), 50%, rgb(106, 12, 214), 80%,  rgb(213, 34, 97));
+    color: black;
+    font-family: "Courier new";
+    font-size: 15px;
+    text-align: center;
+}
+
+.only-message {
+    background: rgb(22, 135, 82);
+    border: 2px solid rgb(235, 228, 23);
+    padding: 10px;
+    position: absolute;
+    text-align: center;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-weight: bold;
+}
+
+.only-message button {
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin-top: 2vh;
+    text-decoration: none;
+}
+
+@media (min-width: 1500px) {
+    body {
+        font-size: 20px;
+    }
+}
+

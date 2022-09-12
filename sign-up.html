@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style//index.css">
+</head>
+<body>
+    <h1>cadastrar</h1>
+    <div class="credentials">
+        <form action="sign-up.php" method="post" id="credentials-form">
+            <label for="login">login:</label>
+            <input type="text" id="login" name="login">
+
+            <label for="password">senha:</label>
+            <input type="password" id="password" name="password">
+
+            <label for="confirm-password">confirmar senha:</label>
+            <input type="password" id="confirm-password" name="confirm-password">
+            
+            <button type="submit" form="credentials-form" value="submit">cadastrar</button>
+        </form>
+    </div>
+    <div id="options">
+        <a id="password-recover" href="password-recover.php">esqueceu a senha?</a>
+        <a id="sign-in" href="index.html">login</a>
+    </div>
+
+</body>
+</html>
