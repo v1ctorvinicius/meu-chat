@@ -42,6 +42,14 @@
                         </a>
                     ';
                     break;
+                case ERROR_CLIENT_DOES_NOT_EXIST:
+                    echo '
+                        [!] o login não existe.
+                        <a href="/index.html">
+                            <button>voltar</button>
+                        </a>
+                    ';
+                    break;
                 default:
                     # code...
                     break;

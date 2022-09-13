@@ -1,5 +1,7 @@
 <?php
 
+include("util/error-codes.php");
+
 define("UNKNOWN_DB", 1049);
 
 class DBConnection {
@@ -20,7 +22,7 @@ class DBConnection {
             $stmt = $conn->prepare($query);
 
             if($stmt->execute() === false){
-                $status = -2;
+                $status = ERROR_DB_NAME_UNKNOWN;
                 header("Location: error-handler.php/?status=$status");
             }
         }

@@ -10,14 +10,14 @@ body {
 }
 
     body h1 {
-        font-size: 20px;
+        font-size: 25px;
         font-weight: bold;
         text-align: center;
         padding-top: 2vh;
     }
 
     body .credentials {
-        font-size: 3vh;
+        font-size: 15px;
         background-color: #CE2E8E;
         width: 90%;
         margin: auto;
@@ -61,7 +61,7 @@ body {
     }   
     
         body #options a {
-            font-size: x-small;
+            font-size: 10px;
             color: black;
             font-weight: bold;
             padding: 0 5vh 5vh 5vh;
