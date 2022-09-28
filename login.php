@@ -11,11 +11,12 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
         header("Location: error-handler.php/?status=$status");
     }
 
-    $conn = DBConnection::createConnection();
+    $conn = new DBConnection();
+    $conn = $conn->createConnection();
 
-    $query = sprintf("SELECT * FROM client WHERE login = '%s'", $conn->real_escape_string($_POST['login']));
+    $query = "SELECT * FROM client c WHERE c.login = " . $conn->prepare($_POST['login']);
 
-    $result = $conn->query($query);
+    $result = $query->execute($query);
 
     $client = $result->fetch_assoc();
 

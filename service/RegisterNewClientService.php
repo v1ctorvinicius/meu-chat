@@ -10,8 +10,7 @@ class RegisterNewClientService {
             die("credenciais nulas");
         }
         
-        $conn = DBConnection::createConnection();
-        
+        $conn = new DBConnection();
         $repo = new ClientRepository($conn);
         $repo->create($login, $password_hash);
         
