@@ -11,18 +11,14 @@ class DBConnection {
     private PDO $conn;
 
     function __construct () {
-        $this->conn = new PDO('mysql:host=localhost;dbname=' . MYSQL_DB_NAME, MYSQL_USER, MYSQL_PASSWORD);
-        $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        // $this->checkIfDbExists();
-        if ($this->conn->connect_errno){
-            die("db connection error: " . $this->conn->connect_error);
-        }
-    }
-
-    public function createConnection () : PDO{
         try {
-            date_default_timezone_set('America/Sao_Paulo');
-            return $this->conn;
+            $pdo = new PDO('mysql:host=localhost;dbname=' . MYSQL_DB_NAME, MYSQL_USER, MYSQL_PASSWORD);
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            // $this->checkIfDbExists();
+            if ($pdo->errorInfo()[0] != SQL_NO_ERROR){
+                die("db connection error: " . $pdo->errorInfo()[0]);
+            }
+            $this->conn = $pdo;
         } catch (PDOException $e) {
             echo 'error: ' . $e->getMessage();
         }

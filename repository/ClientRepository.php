@@ -6,7 +6,7 @@ include_once("util/properties.php");
 
 class ClientRepository {
 
-    private $conn;
+    private PDO $conn;
 
     function __construct(DBConnection $conn) {
         $this->conn = $conn->getConnection();
