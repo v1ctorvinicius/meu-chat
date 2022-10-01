@@ -1,0 +1,21 @@
+body {
+    
+}
+
+#chat-details {
+    font-size: 13px;
+}
+
+label {
+    display: block;
+    width: 90%;
+    margin: auto;
+}
+
+input {
+    display: block;
+    width: 90%;
+    margin: auto;
+}
+
+

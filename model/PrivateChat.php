@@ -2,7 +2,7 @@
 
 include_once("model/Client.php");
 
-class Chat {
+class PrivateChat {
 
     private array $clients;
 

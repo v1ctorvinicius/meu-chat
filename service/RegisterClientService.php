@@ -3,7 +3,7 @@
 include_once("model/DBConnection.php");
 include_once("repository/ClientRepository.php");
 
-class RegisterNewClientService {
+class RegisterClientService {
 
     public function run(string $login, string $password_hash){
         if(is_null($login) || is_null($password_hash)){

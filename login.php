@@ -3,6 +3,7 @@
 include_once("model/DBConnection.php");
 include_once("model/Client.php");
 include_once("util/error-codes.php");
+include_once("model/Clients.php");
 
 if($_SERVER['REQUEST_METHOD'] === "POST"){
 
@@ -12,11 +13,13 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
         exit;
     }
 
+    $login = $_POST['login'];
+
     $conn = new DBConnection();
     $conn = $conn->getConnection();
 
     $query = $conn->prepare("SELECT * FROM client c WHERE c.login = ?");
-    $query->bindParam(1, $_POST['login']);
+    $query->bindParam(1, $login);
     if($query->execute() == false){
         echoErrorCode($query);
     }
@@ -33,7 +36,16 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
         exit;
     }
 
+    // login success
     if(password_verify($_POST['password'], $result['password_hash'])){
+        session_start();
+        $_SESSION['login'] = $login;
+        if ( ! isset(Clients::$clients)) {
+            Clients::$clients = [];
+        }
+        
+        array_push(Clients::$clients, $result);
+
         header("Location: /home.php");
         exit;
     }

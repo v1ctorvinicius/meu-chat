@@ -9,24 +9,23 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style//default.css">
-    <link rel="stylesheet" href="style//index.css">
+    <link rel="stylesheet" href="style//create-global-chat.css">
 </head>
 <body>
     <h1 id="title">meu-chat</h1>
-    <div class="credentials">
-        <form action="/login.php" method="post" id="credentials-form">
-            <label for="login">login</label>
-            <input type="text" id="login" name="login">
+    <div id="chat-details">
+        <form action="global-chat.php" method="post" id="credentials-form">
+            <label for="name">nome do chat</label>
+            <input type="text" id="name" name="name">
 
             <label for="password">senha</label>
             <input type="password" id="password" name="password">
             
-            <button class="confirm-btn" type="submit" form="credentials-form" value="submit">entrar</button>
+            <div>
+                <button class="confirm-btn" type="submit" form="credentials-form" value="submit">criar chat</button>
+            </div>
         </form>
     </div>
-    <div id="options">
-        <a id="password-recover" href="password-recover.html">esqueceu a senha?</a>
-        <a id="sign-up" href="sign-up.html">cadastrar</a>
-    </div>
+    
 </body>
 </html>

@@ -1,16 +1,16 @@
 <?php
 
-include_once("service/RegisterNewClientService.php");
+include_once("service/RegisterClientService.php");
 include_once("model/Client.php");
 
 // check for errors in the user input
 checkForms();
 
 // create a new client in db
-$registerNewClientService = new RegisterNewClientService();
+$registerClientService = new RegisterClientService();
 
 $password_hash = password_hash($_POST['password'], PASSWORD_DEFAULT);
-$registerNewClientService->run($_POST['login'], $password_hash);
+$registerClientService->run($_POST['login'], $password_hash);
 header("Location: sign-up-success.html");
 
 function checkForms () {

@@ -1,0 +1,9 @@
+#chat-details {
+    align-self: center;
+    width: 90%;
+    margin-bottom: 20vh;
+}
+
+#chat-details label, input{
+    width: 100%;
+}
