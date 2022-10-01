@@ -1,1 +1,0 @@
-console.alert("logado");

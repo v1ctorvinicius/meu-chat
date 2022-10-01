@@ -1,0 +1,29 @@
+html {
+    min-height: 100%;
+}
+
+#meuchat-title {
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+}
+
+body {
+    height: 100%;
+    background: linear-gradient(rgb(135, 62, 145), 50%, rgb(106, 12, 214), 80%,  rgb(213, 34, 97));
+    color: black;
+    font-family: "Courier new";
+}
+
+.confirm-btn {
+    display: block;
+    width: 90%;
+    margin: auto;
+    margin-top: 4vh;
+    background-color: #4ad561;
+    font-weight: bold;
+}
+
+.bottom {
+
+}

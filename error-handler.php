@@ -51,7 +51,7 @@
                     ';
                     break;
                 default:
-                    # code...
+                    // code
                     break;
             }
         ?>

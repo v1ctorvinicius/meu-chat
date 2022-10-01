@@ -6,7 +6,7 @@ class Client {
     private string $email;
     private int $id;
 
-    public function __construct(string $login, string $passwordHash){
+    function __construct(string $login, string $passwordHash){
         $this->login = $login;
         $this->passwordHash = $passwordHash;
     }

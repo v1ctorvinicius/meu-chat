@@ -28,20 +28,6 @@ class DBConnection {
         return $this->conn;
     }
     
-    // TO - DO !
-    // private function checkIfDbExists () {
-    //     if($this->conn->errorInfo() !== SQL_NO_ERROR){
-    //         echo($this->conn->errorInfo());
-    //         $query = "CREATE DATABASE " . MYSQL_DB_NAME;
-            
-    //         $stmt = $this->conn->prepare($query);
-    
-    //         if($stmt->execute() === false){
-    //             $status = ERROR_DB_NAME_UNKNOWN;
-    //             header("Location: error-handler.php/?status=$status");
-    //         }
-    //     }
-    // }
 }
 
 ?>

@@ -17,13 +17,14 @@ body{
     padding: 10px;
     position: absolute;
     text-align: center;
-    top: 40%;
+    top: 30%;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     justify-content: center;
     flex-direction: column;
     font-weight: bold;
+    font-size: 15px;
 }
 
 .only-message button {
@@ -37,6 +38,13 @@ body{
 @media (min-width: 1500px) {
     body {
         font-size: 20px;
+    }
+}
+
+@media (min-width: 241px) {
+    .only-message {
+        font-size: 15px;
+        top: 25%;
     }
 }
 
