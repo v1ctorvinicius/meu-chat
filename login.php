@@ -40,21 +40,18 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
     if(password_verify($_POST['password'], $result['password_hash'])){
         session_start();
         $_SESSION['login'] = $login;
-        if ( ! isset(Clients::$clients)) {
-            Clients::$clients = [];
-        }
-        
-        array_push(Clients::$clients, $result);
 
         header("Location: /home.php");
         exit;
     }
-
+    
+    $status = ERROR_CLIENT_DOES_NOT_EXIST;
+    header("Location: error-handler.php/?status=$status");
     exit;
 }
 
 function echoErrorCode (PDOStatement $query) : void {
-    die("query error: " . $query->errorCode());
+    echo "query error: " . $query->errorCode();
 }
 
 ?>

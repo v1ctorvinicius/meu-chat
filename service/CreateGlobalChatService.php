@@ -1,20 +1,37 @@
 <?php 
 
-include_once("model/Client.php");
+include_once("../model/GlobalChat.php");
+include_once("../model/GlobalChats.php");
 
 class CreateGlobalChatService {
 
-    private string $name;
-    private string $password;
-    private string $creator;
+    public static function execute () {
 
-    function __construct (string $creator) {
-        $this->creator = $creator;
-        $this->name = $_POST['name'];
-        $this->password = $_POST['password'];
-        if (empty($_POST['name'])) {
-            $this->name = $creator->getLogin();
+        session_start();
+
+        if (isset($_POST['name'])) {
+            $name = $_POST['name'] . "'s chat";
+        } else {
+            $name = $_SESSION['login'];
         }
+
+        if (isset($_POST['password'])) { 
+            $password = $_POST['password'];
+        } else {
+            $password = '';
+        }
+
+        $creator = $_SESSION['login'];
+
+        $chat = new GlobalChat($name, $password, $creator);
+        
+        if( ! isset(GlobalChats::$globalChats)) {
+            GlobalChats::$globalChats = [];
+        }
+
+        header("Location: global-chat.php");
+
+        exit;
     }
 
 }

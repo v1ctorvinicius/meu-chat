@@ -44,7 +44,15 @@
                     break;
                 case ERROR_CLIENT_DOES_NOT_EXIST:
                     echo '
-                        [!] o login não existe.
+                        [!] credenciais incorretas.
+                        <a href="/index.html">
+                            <button>voltar</button>
+                        </a>
+                    ';
+                    break;
+                case ERROR_WRONG_PASSWORD:
+                    echo '
+                        [!] credenciais incorretas.
                         <a href="/index.html">
                             <button>voltar</button>
                         </a>

@@ -1,6 +1,6 @@
 <?php
 
-include_once("model/Client.php");
+include_once("Client.php");
 
 class PrivateChat {
 
