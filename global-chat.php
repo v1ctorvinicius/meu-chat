@@ -16,9 +16,29 @@
     <?php 
         include_once('model/Clients.php');
         session_start();
-        var_dump($_SESSION);
-        // echo Clients::$clients;
+        echo($_SESSION['login']);
     ?>
+
+    <output>
+
+    </output>
+
+    <input type="text">
+
+    <script>
+        
+        const ws = new WebSocket('ws://' + location.host + ':9090');
+        const input = document.querySelector('input');
+        const output = document.querySelector('output');
+
+        ws.addEventListener('open', console.log);
+
+        input.addEventListener('keypress', e => {
+            if(e.key === 'Enter'){
+
+            }
+        });
+    </script>
       
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
