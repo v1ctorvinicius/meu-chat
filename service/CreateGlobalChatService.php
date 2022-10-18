@@ -21,14 +21,29 @@ class CreateGlobalChatService {
             $password = '';
         }
 
-        $creator = $_SESSION['login'];
+        $creatorLogin = $_SESSION['login'];
+        
+        $conn = new DBConnection();
+        $conn = $conn->getConnection();        
+        
+        $query = $conn->prepare("SELECT * FROM client c WHERE c.login = ?");
+        $query->bindParam(1, $creatorLogin);
+        // TODO - util\echoErrorCode
+        // if($query->execute() == false){
+        //     echoErrorCode($query);
+        // }
+
+        $creator = $query->fetch();
 
         $chat = new GlobalChat($name, $password, $creator);
         
         if( ! isset(GlobalChats::$globalChats)) {
             GlobalChats::$globalChats = [];
+            array_push(GlobalChats::$globalChats, $chat);
+            header("Location: global-chat.php");
         }
 
+        array_push(GlobalChats::$globalChats, $chat);
         header("Location: global-chat.php");
 
         exit;

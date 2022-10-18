@@ -18,6 +18,11 @@ class Client {
     public function getPasswordHash(){
         return $this->passwordHash;
     }
+
+    public function connectToChat(){
+        $connector = new React\Socket\Connector();
+        $connector->connect('google.com:443');
+    }
 }
 
 ?>

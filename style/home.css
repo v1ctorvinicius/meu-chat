@@ -3,6 +3,12 @@ body {
     flex-direction: column;
 }
 
+    body h1 {
+        font-size: 25px;
+        font-weight: bold;
+        text-align: center;
+    }
+
 #global-chats {
     width: 90%;
     margin: auto;

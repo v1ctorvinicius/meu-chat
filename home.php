@@ -11,12 +11,14 @@
     <link rel="stylesheet" href="style//home.css">
 </head>
 <body>
-    <h1 id="title">meu-chat</h1>
+    <h1>meu-chat</h1>
     <section id="global-chats">
         <?php
-            echo 'chat global 1 <hr>';
-            echo 'chat global 2 <hr>';
-            echo 'chat global 3 <hr>';
+            require_once("model//GlobalChats.php");
+            if( ! isset(GlobalChats::$globalChats)) {
+                GlobalChats::$globalChats = [];
+            }
+            var_dump(GlobalChats::$globalChats);
         ?>
     </section>
     <section id="options">

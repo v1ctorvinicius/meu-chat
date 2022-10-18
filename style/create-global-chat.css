@@ -1,3 +1,9 @@
+    body h1 {
+        font-size: 25px;
+        font-weight: bold;
+        text-align: center;
+    }
+
 #chat-details {
     align-self: center;
     width: 90%;
